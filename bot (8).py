@@ -1,27 +1,4 @@
-"""
-eFootball Accounts Marketplace Bot
------------------------------------
-Clients DM the bot -> send team screenshots (team + managers + players),
-price, currency (MAD/$), payment method, platform (Konami / Google Play)
-Admin gets the submission with 3 buttons: Accept (+markup) / Custom Price / Reject
-On Accept or Custom Price -> auto-posted to your channel
-On Reject -> client is notified
-Admin can also mark: Konami Accepted / Google Play Rejected
-
-FEATURES:
-  - Submission ID (#sid) shown to the client in their confirmation message
-  - Users can write a description of their account (step 7/7)
-  - Spam / rate-limit protection: too many messages -> waste-time mode
-  - Persistent ban list with /ban, /unban, /bans admin commands
-  - Waste-time mode: spammers get a fake looping flow to waste their time
-  - All messages use parse_mode="HTML" — immune to user-supplied * _ ` characters
-
-Requirements:
-    pip install aiogram --break-system-packages
-
-Run:
-    python3 bot.py
-"""
+from __future__ import annotations
 
 import asyncio
 import html as html_module
@@ -32,7 +9,6 @@ import time
 from collections import defaultdict
 from datetime import datetime
 from typing import Optional
-
 from aiogram import Bot, Dispatcher, F, Router
 from aiogram.filters import CommandStart, Command
 from aiogram.fsm.context import FSMContext
@@ -50,7 +26,7 @@ from aiogram.types import (
 # ============================================================
 BOT_TOKEN = "8942747782:AAFAG5UHINBVEBgjCoBBgxpjWIh92eehFLg"
 ADMIN_ID = 7452847726          # your numeric Telegram user ID (not username)
-CHANNEL_ID = "@VaultX_PES"     # channel username or numeric ID like -1001234567890
+CHANNEL_ID = "@VXStorePes"     # channel username or numeric ID like -1001234567890
 
 MARKUP_USD = 2      # added to client's price when currency is $
 MARKUP_MAD = 20     # added to client's price when currency is MAD
